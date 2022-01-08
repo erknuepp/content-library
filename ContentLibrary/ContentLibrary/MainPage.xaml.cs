@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Threading.Tasks;
 
     using Xamarin.Forms;
 
@@ -23,7 +24,7 @@
                 "Movie",
                 "Album",
                 "Song"
-            };
+            };            
         }
 
         public void AddContentButtonClicked(object sender, EventArgs e)
@@ -93,6 +94,8 @@
                 if (selectedContentItem is Book book)
                 {
                     stateMessage.Text = book.Read();
+                    IRestService restService = new BookRestService();
+                    api.Text = restService.RefreshDataAsync();
                 }
                 else if (selectedContentItem is Movie movie)
                 {
