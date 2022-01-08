@@ -7,6 +7,6 @@
 
     internal interface IRestService
     {
-        string RefreshDataAsync();
+        string GetDataAsync(string searchTerm);
     }
 }

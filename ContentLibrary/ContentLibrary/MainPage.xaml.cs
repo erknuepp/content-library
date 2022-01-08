@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Text.Json;
     using System.Threading.Tasks;
 
     using Xamarin.Forms;
@@ -95,7 +96,10 @@
                 {
                     stateMessage.Text = book.Read();
                     IRestService restService = new BookRestService();
-                    api.Text = restService.RefreshDataAsync();
+                    var content = restService.GetDataAsync(book.GetTitle());
+                    Volume volume = JsonSerializer.Deserialize<Volume>(content);
+                    api.Source = volume.items.First().accessInfo.webReaderLink;
+
                 }
                 else if (selectedContentItem is Movie movie)
                 {

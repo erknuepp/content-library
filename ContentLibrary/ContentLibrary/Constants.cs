@@ -6,6 +6,8 @@
 
     internal class Constants
     {
-        public const string GoogleBooksUrl = "https://www.googleapis.com/books/v1/volumes?q=flowers&projection=lite&key=AIzaSyCEMDg8gRalxPF4d_FNAwWN5BWz-tMsgcQ";
+        public const string GoogleBooksUri = "https://www.googleapis.com/books/v1/volumes?q=";
+        public const string MaxResults = "&maxResults=1";
+        public const string ApiKey = "&key=AIzaSyCEMDg8gRalxPF4d_FNAwWN5BWz-tMsgcQ";
     }
 }

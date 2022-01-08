@@ -23,7 +23,7 @@
         <Button x:Name="listenButton" Text="Listen" Clicked="ListenButtonClicked"/>
         <Button x:Name="disposeButton" Text="Dispose" Clicked="DisposeButtonClicked"/>
         <Label x:Name="stateMessage" Text="" FontSize="20"/>
-        <Label x:Name="api" Text="" FontSize="20"/>
+        <WebView x:Name="api" WidthRequest="1000" HeightRequest="1000"/>
     </StackLayout>
 
 </ContentPage>
