@@ -95,10 +95,12 @@
                 if (selectedContentItem is Book book)
                 {
                     stateMessage.Text = book.Read();
-                    IRestService restService = new BookRestService();
-                    var content = restService.GetDataAsync(book.GetTitle());
-                    Volume volume = JsonSerializer.Deserialize<Volume>(content);
-                    api.Source = volume.items.First().accessInfo.webReaderLink;
+                    //IRestService restService = new BookRestService();
+                    //var content = restService.GetDataAsync("book", book.GetTitle());
+                    //Volume volume = JsonSerializer.Deserialize<Volume>(content);
+                    //api.Source = volume.items.First().accessInfo.webReaderLink;
+                    IRestService arestService = new ContentInfoRestService();
+                    var acontent = arestService.GetDataAsync("ebook", book.GetTitle());
 
                 }
                 else if (selectedContentItem is Movie movie)

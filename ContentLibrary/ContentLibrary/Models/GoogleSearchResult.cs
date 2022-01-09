@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
-    public class Volume
+    public class GoogleSearchResult
     {
         public string kind { get; set; }
         public int totalItems { get; set; }
