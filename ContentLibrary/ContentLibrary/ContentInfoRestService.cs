@@ -5,21 +5,25 @@
     using System.Diagnostics;
     using System.Net.Http;
     using System.Text;
-    using System.Threading.Tasks;
 
-    internal class BookRestService : IRestService
+    internal class ContentInfoRestService : IRestService
     {
         readonly HttpClient client;
-
-        public BookRestService()
+        public ContentInfoRestService()
         {
             client = new HttpClient();
+
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mediaType">movie, podcast, music, musicVideo, audiobook, shortFilm, tvShow, software, ebook, all. Default: all</param>
+        /// <param name="searchTerm">The unescaped term to be search</param>
+        /// <returns></returns>
         public string GetDataAsync(string mediaType, string searchTerm)
         {
-
-            Uri uri = new Uri(Constants.GoogleBooksUri + Uri.EscapeUriString(searchTerm) + Constants.MaxResults + Constants.ApiKey);
+            Uri uri = new Uri(Constants.AppleiTunesUri + Uri.EscapeUriString(searchTerm) + $"&media={mediaType}");
             HttpResponseMessage response = client.GetAsync(uri).Result;
             string content = "";
             if (response.IsSuccessStatusCode)

@@ -7,6 +7,6 @@
 
     internal interface IRestService
     {
-        string GetDataAsync(string searchTerm);
+        string GetDataAsync(string mediaType, string searchTerm);
     }
 }
