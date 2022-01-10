@@ -107,10 +107,6 @@
                 if (selectedContentItem is Book book)
                 {
                     stateMessage.Text = book.Read();
-                    //IRestService restService = new BookRestService();
-                    //var content = restService.GetDataAsync("book", book.GetTitle());
-                    //Volume volume = JsonSerializer.Deserialize<Volume>(content);
-                    //api.Source = volume.items.First().accessInfo.webReaderLink;
                     IRestService contentInfoService = new ContentInfoRestService();
                     var content = contentInfoService.GetDataAsync("ebook", book.GetTitle());
                     DisplayContentInfo(content);
