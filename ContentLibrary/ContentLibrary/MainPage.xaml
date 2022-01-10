@@ -16,16 +16,21 @@
                    HeightRequest="1"
                    Color="LightGray"
                    Margin ="40, 0, 40, 0"/>
-        <Grid>
+        <Grid VerticalOptions="End">
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
+                <RowDefinition Height="300" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <ListView x:Name="contentLibraryListView" Grid.Column="0"/>
-            <Image x:Name="contentImage" Grid.Column="1"></Image>
+            <StackLayout Grid.Column="1">
+                <Image x:Name="contentImage" ></Image>
+                <Label x:Name="contentName" ></Label>
+                <Label x:Name="contentDescription" ></Label>
+            </StackLayout>
+            
         </Grid>
         
         <Button x:Name="playButton" Text="Play" Clicked="PlayButtonClicked"/>
