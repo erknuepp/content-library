@@ -67,18 +67,34 @@
                 if (selectedContentItem is Movie movie)
                 {
                     stateMessage.Text = movie.Play();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("movie", movie.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else if (selectedContentItem is Song song)
                 {
                     stateMessage.Text = song.Play();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("music", song.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else if (selectedContentItem is AudioBook audioBook)
                 {
                     stateMessage.Text = audioBook.Play();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("audiobook", audioBook.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else if (selectedContentItem is Album album)
                 {
                     stateMessage.Text = album.Play();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("music", album.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else
                 {
@@ -99,13 +115,20 @@
                     //var content = restService.GetDataAsync("book", book.GetTitle());
                     //Volume volume = JsonSerializer.Deserialize<Volume>(content);
                     //api.Source = volume.items.First().accessInfo.webReaderLink;
-                    IRestService arestService = new ContentInfoRestService();
-                    var acontent = arestService.GetDataAsync("ebook", book.GetTitle());
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("ebook", book.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
+
 
                 }
                 else if (selectedContentItem is Movie movie)
                 {
                     stateMessage.Text = movie.Read();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("movie", movie.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else
                 {
@@ -122,6 +145,10 @@
                 if (selectedContentItem is Movie movie)
                 {
                     stateMessage.Text = movie.View();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("movie", movie.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else
                 {
@@ -138,14 +165,26 @@
                 if (selectedContentItem is AudioBook audioBook)
                 {
                     stateMessage.Text = audioBook.Listen();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("audiobook", audioBook.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else if(selectedContentItem is Song song)
                 {
                     stateMessage.Text = song.Listen();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("music", song.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else if(selectedContentItem is Album album)
                 {
                     stateMessage.Text = album.Listen();
+                    IRestService contentInfoService = new ContentInfoRestService();
+                    var content = contentInfoService.GetDataAsync("music", album.GetTitle());
+                    AppleSearchResult ci = JsonSerializer.Deserialize<AppleSearchResult>(content);
+                    contentImage.Source = ci.results.FirstOrDefault().artworkUrl100;
                 }
                 else
                 {

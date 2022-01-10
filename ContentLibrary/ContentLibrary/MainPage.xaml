@@ -16,14 +16,24 @@
                    HeightRequest="1"
                    Color="LightGray"
                    Margin ="40, 0, 40, 0"/>
-        <ListView x:Name="contentLibraryListView"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ListView x:Name="contentLibraryListView" Grid.Column="0"/>
+            <Image x:Name="contentImage" Grid.Column="1"></Image>
+        </Grid>
+        
         <Button x:Name="playButton" Text="Play" Clicked="PlayButtonClicked"/>
         <Button x:Name="viewButton" Text="View" Clicked="ViewButtonClicked"/>
         <Button x:Name="readButton" Text="Read" Clicked="ReadButtonClicked"/>
         <Button x:Name="listenButton" Text="Listen" Clicked="ListenButtonClicked"/>
-        <Button x:Name="disposeButton" Text="Dispose" Clicked="DisposeButtonClicked"/>
+        <Button x:Name="disposeButton" Text="Clear Library" Clicked="DisposeButtonClicked"/>
         <Label x:Name="stateMessage" Text="" FontSize="20"/>
-        <WebView x:Name="api" WidthRequest="1000" HeightRequest="1000"/>
     </StackLayout>
 
 </ContentPage>
