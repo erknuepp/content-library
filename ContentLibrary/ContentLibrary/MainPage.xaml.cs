@@ -4,7 +4,6 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Text.Json;
-    using System.Threading.Tasks;
 
     using Xamarin.Forms;
 
@@ -110,8 +109,6 @@
                     IRestService contentInfoService = new ContentInfoRestService();
                     var content = contentInfoService.GetDataAsync("ebook", book.GetTitle());
                     DisplayContentInfo(content);
-
-
                 }
                 else if (selectedContentItem is Movie movie)
                 {
