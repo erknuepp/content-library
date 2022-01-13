@@ -18,7 +18,7 @@
                    Margin ="40, 0, 40, 0"/>
         <Grid VerticalOptions="End">
             <Grid.RowDefinitions>
-                <RowDefinition Height="300" />
+                <RowDefinition Height="200" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
